@@ -9,6 +9,9 @@ function Navbar() {
             <a href='/'>Polka</a>
           </div>
           <div className='flex justify-center flex-1 space-x-8 text-center '>
+          <h1 className='font-medium text-lg text-black '>
+              <a href='polkadotlayout'>Polkadot</a>
+            </h1>
             <h1 className='font-medium text-lg text-black '>
               <a href='/accountbalance'>Account</a>
             </h1>
