@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-function PolkadotAccount() {
+function PolkadotBalanceAccount() {
     const [balanceHistory, setBalanceHistory] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -45,13 +45,13 @@ function PolkadotAccount() {
             
             <button 
                 onClick={fetchBalanceHistory} 
-                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+                className="px-4 py-2 bg-black text-white rounded-md"
             >
                 Fetch Balance History
             </button>
 
             {/* Display loading, error or data */}
-            {loading && <p className="mt-4 text-blue-600">Loading...</p>}
+            {loading && <p className="mt-4 text-black">Loading...</p>}
             {error && <p className="mt-4 text-red-600">{error}</p>}
             {balanceHistory && (
                 <div className="mt-4">
@@ -65,4 +65,4 @@ function PolkadotAccount() {
     );
 }
 
-export default PolkadotAccount;
+export default PolkadotBalanceAccount;

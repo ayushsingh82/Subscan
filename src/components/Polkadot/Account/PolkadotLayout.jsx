@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PolkadotAccount from "./PolkadotAccount";
+import PolkadotBalanceAccount from "./PolkadotBalanceAccount";
 
 
 function PolkadotLayout() {
@@ -8,7 +8,7 @@ function PolkadotLayout() {
   const renderSection = () => {
     switch (activeSection) {
       case "account":
-        return <div><PolkadotAccount/></div>;
+        return <div><PolkadotBalanceAccount/></div>;
       case "block":
         return <div>Polkadot Block Information</div>;
       case "staking":
@@ -35,7 +35,7 @@ function PolkadotLayout() {
 
   const dotStyle = {
     marginLeft: "5px",
-    color: "purple",
+    color: "#f472b8",
   };
 
   return (
