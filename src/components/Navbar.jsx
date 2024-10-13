@@ -1,5 +1,4 @@
 import React from 'react'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 function Navbar() {
     return (
@@ -11,9 +10,6 @@ function Navbar() {
           <div className='flex justify-center flex-1 space-x-8 text-center '>
           <h1 className='font-medium text-lg text-pink-500 '>
               <a href='polkadotlayout'>Polkadot</a>
-            </h1>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/accountbalance'>Account</a>
             </h1>
             <h1 className='font-medium text-lg text-pink-500'>
               <a href='/'>Kusama</a>
