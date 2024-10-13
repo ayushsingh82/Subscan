@@ -41,7 +41,7 @@ function PolkadotAccount() {
 
     return (
         <div className="p-5">
-            <h2 className="text-2xl font-bold mb-4">Account Balance History</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pink-500">Account Balance History</h2>
             
             <button 
                 onClick={fetchBalanceHistory} 
