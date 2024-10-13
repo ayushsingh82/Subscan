@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import PolkadotBalanceAccount from "./PolkadotBalanceAccount";
-
+import PolkadotTokenHolder from "./PolkadotTokenHolder";
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
+  const [accountView, setAccountView] = useState("balance");
 
   const renderSection = () => {
     switch (activeSection) {
       case "account":
-        return <div><PolkadotBalanceAccount/></div>;
+        return (
+          <div>
+            {accountView === "balance" && <PolkadotBalanceAccount />}
+            {accountView === "token" && <PolkadotTokenHolder/>}
+          </div>
+        );
       case "block":
         return <div>Polkadot Block Information</div>;
       case "staking":
@@ -38,9 +44,15 @@ function PolkadotLayout() {
     color: "#f472b8",
   };
 
+  const dropdownStyle = {
+    padding: "10px",
+    backgroundColor: "#f3f4f6",
+    borderRadius: "5px",
+    marginBottom: "10px",
+  };
+
   return (
     <div className="mt-[30px] text-center">
-   
       <div style={{ marginBottom: "20px" }}>
         <button
           style={buttonStyle("account")}
@@ -73,6 +85,20 @@ function PolkadotLayout() {
           NFT {activeSection === "nft" && <span style={dotStyle}>●</span>}
         </button>
       </div>
+
+      {activeSection === "account" && (
+        <div style={dropdownStyle}>
+          <label>
+            <select
+              value={accountView}
+              onChange={(e) => setAccountView(e.target.value)}
+            >
+              <option value="balance">Balance Account</option>
+              <option value="token">Token Holder</option>
+            </select>
+          </label>
+        </div>
+      )}
 
       <div>{renderSection()}</div>
     </div>
