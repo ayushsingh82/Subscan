@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-function PolkadotBalanceAccount() {
+function PolkadotBalanceHistory() {
     const [balanceHistory, setBalanceHistory] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -65,4 +65,4 @@ function PolkadotBalanceAccount() {
     );
 }
 
-export default PolkadotBalanceAccount;
+export default PolkadotBalanceHistory;

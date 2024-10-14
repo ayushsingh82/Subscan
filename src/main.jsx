@@ -6,17 +6,21 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements} from 'react
 import { Route } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
-import PolkadotBalanceAccount from './components/Polkadot/Account/PolkadotBalanceAccount.jsx'
+import PolkadotBalanceHistory from './components/Polkadot/Account/PolkadotBalanceHistory.jsx'
 import PolkadotLayout from './components/Polkadot/Account/PolkadotLayout.jsx'
 import PolkadotTokenHolder from './components/Polkadot/Account/PolkadotTokenHolder.jsx'
+import PolkadotAccountList from './components/Polkadot/Account/PolkadotAccountList.jsx'
+import PolkadotAccountStats from './components/Polkadot/Account/PolkadotAccountStats.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
     <Route path='/' element={<Home/>}/>
-    <Route path='/polkadotbalanceaccount' element={<PolkadotBalanceAccount/>}/>
+    <Route path='/polkadotbalancehistory' element={<PolkadotBalanceHistory/>}/>
     <Route path='/polkadotlayout' element={<PolkadotLayout/>}/>
     <Route path='/polkadottokenholder' element={<PolkadotTokenHolder/>}/>
+    <Route path='/polkadotaccountlist' element={<PolkadotAccountList/>}/>
+    <Route path='/polkadotaccountstats' element={<PolkadotAccountStats/>}/>
     </Route>
   )
 )

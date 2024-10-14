@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import PolkadotBalanceAccount from "./PolkadotBalanceAccount";
+import PolkadotBalanceHistory from "./PolkadotBalanceHistory";
 import PolkadotTokenHolder from "./PolkadotTokenHolder";
+import PolkadotAccountList from "./PolkadotAccountList";
+import PolkadotAccountStats from "./PolkadotAccountStats";
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -11,8 +13,10 @@ function PolkadotLayout() {
       case "account":
         return (
           <div>
-            {accountView === "balance" && <PolkadotBalanceAccount />}
+            {accountView === "balance" && <PolkadotBalanceHistory />}
             {accountView === "token" && <PolkadotTokenHolder/>}
+            {accountView === "account-list" && <PolkadotAccountList />}
+            {accountView === "account-stats" && <PolkadotAccountStats />}
           </div>
         );
       case "block":
@@ -95,6 +99,8 @@ function PolkadotLayout() {
             >
               <option value="balance">Balance Account</option>
               <option value="token">Token Holder</option>
+              <option value="account-list">Account List</option>
+              <option value="account-stats">Account Stats</option>
             </select>
           </label>
         </div>
