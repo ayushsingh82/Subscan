@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import PolkadotBalanceHistory from "./PolkadotBalanceHistory";
 import PolkadotTokenHolder from "./PolkadotTokenHolder";
 import PolkadotAccountList from "./PolkadotAccountList";
-import PolkadotAccountStats from "./PolkadotAccountStats";
+import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList"; 
+
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
   const [accountView, setAccountView] = useState("balance");
+  const [stakingView, setStakingView] = useState("reward"); // Default to "Reward/Slash"
 
   const renderSection = () => {
     switch (activeSection) {
@@ -14,15 +16,19 @@ function PolkadotLayout() {
         return (
           <div>
             {accountView === "balance" && <PolkadotBalanceHistory />}
-            {accountView === "token" && <PolkadotTokenHolder/>}
+            {accountView === "token" && <PolkadotTokenHolder />}
             {accountView === "account-list" && <PolkadotAccountList />}
-            {accountView === "account-stats" && <PolkadotAccountStats />}
           </div>
         );
       case "block":
         return <div>Polkadot Block Information</div>;
       case "staking":
-        return <div>Polkadot Staking Information</div>;
+        return (
+          <div>
+            {stakingView === "reward" && <PolkadotRewardSlash />}
+            {stakingView === "validator" && <p>Hello</p>}
+          </div>
+        );
       case "contract":
         return <div>Polkadot Contract Information</div>;
       case "nft":
@@ -100,7 +106,20 @@ function PolkadotLayout() {
               <option value="balance">Balance Account</option>
               <option value="token">Token Holder</option>
               <option value="account-list">Account List</option>
-              <option value="account-stats">Account Stats</option>
+            </select>
+          </label>
+        </div>
+      )}
+
+      {activeSection === "staking" && (
+        <div style={dropdownStyle}>
+          <label>
+            <select
+              value={stakingView}
+              onChange={(e) => setStakingView(e.target.value)}
+            >
+              <option value="reward">Reward/Slash List</option>
+              <option value="validator">Validator</option>
             </select>
           </label>
         </div>

@@ -11,6 +11,7 @@ import PolkadotLayout from './components/Polkadot/Account/PolkadotLayout.jsx'
 import PolkadotTokenHolder from './components/Polkadot/Account/PolkadotTokenHolder.jsx'
 import PolkadotAccountList from './components/Polkadot/Account/PolkadotAccountList.jsx'
 import PolkadotAccountStats from './components/Polkadot/Account/PolkadotAccountStats.jsx'
+import PolkadotRewardSlashList from './components/Polkadot/Staking/PolkadotRewardSlashList.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
     <Route path='/polkadottokenholder' element={<PolkadotTokenHolder/>}/>
     <Route path='/polkadotaccountlist' element={<PolkadotAccountList/>}/>
     <Route path='/polkadotaccountstats' element={<PolkadotAccountStats/>}/>
+    <Route path='/polkadotrewardslash' element={<PolkadotRewardSlashList/>}/>
     </Route>
   )
 )
