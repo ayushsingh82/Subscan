@@ -3,7 +3,7 @@ import PolkadotBalanceHistory from "./PolkadotBalanceHistory";
 import PolkadotTokenHolder from "./PolkadotTokenHolder";
 import PolkadotAccountList from "./PolkadotAccountList";
 import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList"; 
-
+import PolakdotValidatorList from "../Staking/PolkadotValidatorList";
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -26,7 +26,7 @@ function PolkadotLayout() {
         return (
           <div>
             {stakingView === "reward" && <PolkadotRewardSlash />}
-            {stakingView === "validator" && <p>Hello</p>}
+            {stakingView === "validator-list" && <PolakdotValidatorList/>}
           </div>
         );
       case "contract":
@@ -119,7 +119,7 @@ function PolkadotLayout() {
               onChange={(e) => setStakingView(e.target.value)}
             >
               <option value="reward">Reward/Slash List</option>
-              <option value="validator">Validator</option>
+              <option value="validator-list">Validator List</option>
             </select>
           </label>
         </div>
