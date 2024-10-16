@@ -11,7 +11,7 @@ function Navbar() {
       <nav className=''>
         <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-white'>
           <div className='font-bold text-2xl text-pink-500'>
-            <a href='/'>Polka</a>
+            <a href='/'>PolkaScan</a>
           </div>
           {/* <div className='flex justify-center flex-1 space-x-8 text-center'>
             <h1 className='font-medium text-lg text-pink-500'>
