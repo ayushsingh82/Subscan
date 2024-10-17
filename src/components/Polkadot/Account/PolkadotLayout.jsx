@@ -5,12 +5,17 @@ import PolkadotAccountList from "./PolkadotAccountList";
 import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList"; 
 import PolakdotValidatorList from "../Staking/PolkadotValidatorList";
 import PolkadotVotedValidator from "../Staking/PolkadotVotedValidator";
-
+import PolkadotContractEvents from "../Contract/PolkadotContractEvents";
+import PolkadotContractMeta from "../Contract/PolkadotContractMeta";
+import PolkadotBlockDetails from "../Block/PolkadotBlockDetails";
+import PolkadotBlockList from "../Block/PolkadotBlockList";
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
   const [accountView, setAccountView] = useState("balance");
-  const [stakingView, setStakingView] = useState("reward"); // Default to "Reward/Slash"
+  const [stakingView, setStakingView] = useState("reward");
+  const [contractView, setContractView] = useState("contract-event");
+  const [blockView, setBlockView] = useState("block-details"); // State for block view
 
   const renderSection = () => {
     switch (activeSection) {
@@ -23,18 +28,27 @@ function PolkadotLayout() {
           </div>
         );
       case "block":
-        return <div>Polkadot Block Information</div>;
+        return (
+          <div>
+            {blockView === "block-details" && <PolkadotBlockDetails />}
+            {blockView === "block-list" && <PolkadotBlockList />}
+          </div>
+        );
       case "staking":
         return (
           <div>
             {stakingView === "reward" && <PolkadotRewardSlash />}
-            {stakingView === "validator-list" && <PolakdotValidatorList/>}
-            {stakingView === "votedvalidator-list" && <PolkadotVotedValidator/>}
-
+            {stakingView === "validator-list" && <PolakdotValidatorList />}
+            {stakingView === "votedvalidator-list" && <PolkadotVotedValidator />}
           </div>
         );
       case "contract":
-        return <div>Polkadot Contract Information</div>;
+        return (
+          <div>
+            {contractView === "contract-event" && <PolkadotContractEvents />}
+            {contractView === "contract-meta" && <PolkadotContractMeta />}
+          </div>
+        );
       case "nft":
         return <div>Polkadot NFT Information</div>;
       default:
@@ -115,6 +129,21 @@ function PolkadotLayout() {
         </div>
       )}
 
+      {activeSection === "block" && (
+        <div style={dropdownStyle}>
+          <label>
+            <select
+              value={blockView}
+              onChange={(e) => setBlockView(e.target.value)}
+            >
+              <option value="block-details">Block Details</option>
+              <option value="block-list">Block List</option>
+              {/* Add more options here as needed */}
+            </select>
+          </label>
+        </div>
+      )}
+
       {activeSection === "staking" && (
         <div style={dropdownStyle}>
           <label>
@@ -125,7 +154,20 @@ function PolkadotLayout() {
               <option value="reward">Reward/Slash List</option>
               <option value="validator-list">Validator List</option>
               <option value="votedvalidator-list">Voted Validator List</option>
-            
+            </select>
+          </label>
+        </div>
+      )}
+
+      {activeSection === "contract" && (
+        <div style={dropdownStyle}>
+          <label>
+            <select
+              value={contractView}
+              onChange={(e) => setContractView(e.target.value)}
+            >
+              <option value="contract-event">Contract Event</option>
+              <option value="contract-meta">Contract Meta-Data</option>
             </select>
           </label>
         </div>

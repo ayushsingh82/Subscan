@@ -14,7 +14,10 @@ import PolkadotAccountStats from './components/Polkadot/Account/PolkadotAccountS
 import PolkadotRewardSlashList from './components/Polkadot/Staking/PolkadotRewardSlashList.jsx'
 import PolakdotValidatorList from './components/Polkadot/Staking/PolkadotValidatorList.jsx'
 import PolkadotVotedValidator from './components/Polkadot/Staking/PolkadotVotedValidator.jsx'
-
+import PolkadotContractEvents from './components/Polkadot/Contract/PolkadotContractEvents.jsx'
+import PolkadotContractMeta from './components/Polkadot/Contract/PolkadotContractMeta.jsx'
+import PolkadotBlockDetails from './components/Polkadot/Block/PolkadotBlockDetails.jsx'
+import PolkadotBlockList from './components/Polkadot/Block/PolkadotBlockList.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +31,10 @@ const router = createBrowserRouter(
     <Route path='/polkadotrewardslash' element={<PolkadotRewardSlashList/>}/>
     <Route path='/polkadotvalidatorlist' element={<PolakdotValidatorList/>}/>
     <Route path='/polkadotvotedvalidaor' element={<PolkadotVotedValidator/>}/>
+    <Route path='/polkadotcontractevents' element={<PolkadotContractEvents/>}/>
+    <Route path='/polkadotcontractmeta' element={<PolkadotContractMeta/>}/>
+    <Route path='/polkadotblockdetails' element={<PolkadotBlockDetails/>}/>
+    <Route path='/polkadotblocklist' element={<PolkadotBlockList/>}/>
     </Route>
   )
 )
