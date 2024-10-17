@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import PolkadotBalanceHistory from "./PolkadotBalanceHistory";
 import PolkadotTokenHolder from "./PolkadotTokenHolder";
 import PolkadotAccountList from "./PolkadotAccountList";
-import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList"; 
+import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList";
 import PolakdotValidatorList from "../Staking/PolkadotValidatorList";
 import PolkadotVotedValidator from "../Staking/PolkadotVotedValidator";
 import PolkadotContractEvents from "../Contract/PolkadotContractEvents";
 import PolkadotContractMeta from "../Contract/PolkadotContractMeta";
 import PolkadotBlockDetails from "../Block/PolkadotBlockDetails";
 import PolkadotBlockList from "../Block/PolkadotBlockList";
+import PolkadotNFTAccountBalance from "../NFT/PolkadotNFTAccountBalance";
+import PolkadotNFTHolders from "../NFT/PolkadotNFTHolders";
+import PolkadotNFTInfo from "../NFT/PolkadotNFTInfo";
 
 function PolkadotLayout() {
   const [activeSection, setActiveSection] = useState("account");
   const [accountView, setAccountView] = useState("balance");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
-  const [blockView, setBlockView] = useState("block-details"); // State for block view
+  const [blockView, setBlockView] = useState("block-details");
+  const [nftView, setNftView] = useState("nft-balance"); // New state for NFT view
 
   const renderSection = () => {
     switch (activeSection) {
@@ -50,7 +54,14 @@ function PolkadotLayout() {
           </div>
         );
       case "nft":
-        return <div>Polkadot NFT Information</div>;
+        return (
+          <div>
+            {nftView === "nft-balance" && <PolkadotNFTAccountBalance />}
+            {nftView === "nft-holders" && <PolkadotNFTHolders />}
+            {nftView === "nft-info" && <PolkadotNFTInfo />}
+            {/* Add more NFT views as needed */}
+          </div>
+        );
       default:
         return <div>Select a section to view details</div>;
     }
@@ -168,6 +179,22 @@ function PolkadotLayout() {
             >
               <option value="contract-event">Contract Event</option>
               <option value="contract-meta">Contract Meta-Data</option>
+            </select>
+          </label>
+        </div>
+      )}
+
+      {activeSection === "nft" && (
+        <div style={dropdownStyle}>
+          <label>
+            <select
+              value={nftView}
+              onChange={(e) => setNftView(e.target.value)}
+            >
+              <option value="nft-balance">NFT Account Balance</option>
+              <option value="nft-holders">NFT Holders</option>
+              <option value="nft-info">NFT Info</option>
+              {/* Add more options here as needed */}
             </select>
           </label>
         </div>

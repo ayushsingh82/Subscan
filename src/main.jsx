@@ -18,6 +18,9 @@ import PolkadotContractEvents from './components/Polkadot/Contract/PolkadotContr
 import PolkadotContractMeta from './components/Polkadot/Contract/PolkadotContractMeta.jsx'
 import PolkadotBlockDetails from './components/Polkadot/Block/PolkadotBlockDetails.jsx'
 import PolkadotBlockList from './components/Polkadot/Block/PolkadotBlockList.jsx'
+import PolkadotNFTAccountBalance from './components/Polkadot/NFT/PolkadotNFTAccountBalance.jsx'
+import PolkadotNFTHolders from './components/Polkadot/NFT/PolkadotNFTHolders.jsx'
+import PolkadotNFTInfo from './components/Polkadot/NFT/PolkadotNFTInfo.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +38,9 @@ const router = createBrowserRouter(
     <Route path='/polkadotcontractmeta' element={<PolkadotContractMeta/>}/>
     <Route path='/polkadotblockdetails' element={<PolkadotBlockDetails/>}/>
     <Route path='/polkadotblocklist' element={<PolkadotBlockList/>}/>
+    <Route path='/polkadotnftaccountbalance' element={<PolkadotNFTAccountBalance/>}/>
+    <Route path='/polkadotnftholders' element={<PolkadotNFTHolders/>}/>
+    <Route path='/polkadotnftinfo' element={<PolkadotNFTInfo/>}/>
     </Route>
   )
 )
