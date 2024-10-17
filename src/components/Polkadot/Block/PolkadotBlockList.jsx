@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const PolkadotBlockList = () => {
   const [blockData, setBlockData] = useState([]);
@@ -13,19 +12,22 @@ const PolkadotBlockList = () => {
         "row": 10
       });
 
-      const config = {
-        method: 'post',
-        url: 'https://cors-anywhere.herokuapp.com/https://polkadot.api.subscan.io/api/v2/scan/blocks', // Using CORS proxy
-        headers: { 
-          'Content-Type': 'application/json',
-          // Remove User-Agent header as it's not allowed in browsers
-        },
-        data: data
-      };
-
       try {
-        const response = await axios(config);
-        setBlockData(response.data.data.blocks);
+        const response = await fetch('https://polkadot.api.subscan.io/api/v2/scan/blocks', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // 'User-Agent': 'Apidog/1.0.0 (https://apidog.com)' // Not allowed in browsers
+          },
+          body: data,
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        setBlockData(result.data.blocks);
       } catch (err) {
         setError(err);
       } finally {
