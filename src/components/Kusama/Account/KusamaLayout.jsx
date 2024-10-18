@@ -1,65 +1,46 @@
 import React, { useState } from "react";
-import PolkadotBalanceHistory from "./PolkadotBalanceHistory";
-import PolkadotTokenHolder from "./PolkadotTokenHolder";
-import PolkadotAccountList from "./PolkadotAccountList";
-import PolkadotRewardSlash from "../Staking/PolkadotRewardSlashList";
-import PolakdotValidatorList from "../Staking/PolkadotValidatorList";
-import PolkadotVotedValidator from "../Staking/PolkadotVotedValidator";
-import PolkadotContractEvents from "../Contract/PolkadotContractEvents";
-import PolkadotContractMeta from "../Contract/PolkadotContractMeta";
-import PolkadotBlockDetails from "../Block/PolkadotBlockDetails";
-import PolkadotBlockList from "../Block/PolkadotBlockList";
-import PolkadotNFTAccountBalance from "../NFT/PolkadotNFTAccountBalance";
-import PolkadotNFTHolders from "../NFT/PolkadotNFTHolders";
-import PolkadotNFTInfo from "../NFT/PolkadotNFTInfo";
+import KusamaAccountList from './KusamaAccountList';
+import KusamaTokenHolder from "./KusamaTokenHolder";
 
-function PolkadotLayout() {
+function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
-  const [accountView, setAccountView] = useState("balance");
+  const [accountView, setAccountView] = useState("account-list");
+  const [blockView, setBlockView] = useState("block-details");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
-  const [blockView, setBlockView] = useState("block-details");
-  const [nftView, setNftView] = useState("nft-balance"); // New state for NFT view
+  const [nftView, setNftView] = useState("nft-balance");
 
   const renderSection = () => {
     switch (activeSection) {
       case "account":
         return (
           <div>
-            {accountView === "balance" && <PolkadotBalanceHistory />}
-            {accountView === "token" && <PolkadotTokenHolder />}
-            {accountView === "account-list" && <PolkadotAccountList />}
+               {accountView === "account-list" && <KusamaAccountList />}
+               {accountView === "token" && <KusamaTokenHolder />}
           </div>
         );
       case "block":
         return (
           <div>
-            {blockView === "block-details" && <PolkadotBlockDetails />}
-            {blockView === "block-list" && <PolkadotBlockList />}
+          block
           </div>
         );
       case "staking":
         return (
           <div>
-            {stakingView === "reward" && <PolkadotRewardSlash />}
-            {stakingView === "validator-list" && <PolakdotValidatorList />}
-            {stakingView === "votedvalidator-list" && <PolkadotVotedValidator />}
+            stake
           </div>
         );
       case "contract":
         return (
           <div>
-            {contractView === "contract-event" && <PolkadotContractEvents />}
-            {contractView === "contract-meta" && <PolkadotContractMeta />}
+            contract
           </div>
         );
       case "nft":
         return (
           <div>
-            {nftView === "nft-balance" && <PolkadotNFTAccountBalance />}
-            {nftView === "nft-holders" && <PolkadotNFTHolders />}
-            {nftView === "nft-info" && <PolkadotNFTInfo />}
-            {/* Add more NFT views as needed */}
+            nft
           </div>
         );
       default:
@@ -92,7 +73,7 @@ function PolkadotLayout() {
 
   return (
     <div className="mt-[30px] text-center">
-      <h1>Polkadot</h1>
+      <h1>Kusama</h1>
       <div style={{ marginBottom: "20px" }}>
         <button
           style={buttonStyle("account")}
@@ -150,7 +131,6 @@ function PolkadotLayout() {
             >
               <option value="block-details">Block Details</option>
               <option value="block-list">Block List</option>
-              {/* Add more options here as needed */}
             </select>
           </label>
         </div>
@@ -195,7 +175,6 @@ function PolkadotLayout() {
               <option value="nft-balance">NFT Account Balance</option>
               <option value="nft-holders">NFT Holders</option>
               <option value="nft-info">NFT Info</option>
-              {/* Add more options here as needed */}
             </select>
           </label>
         </div>
@@ -206,4 +185,4 @@ function PolkadotLayout() {
   );
 }
 
-export default PolkadotLayout;
+export default KusamaLayout;

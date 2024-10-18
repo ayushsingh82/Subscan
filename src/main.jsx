@@ -22,6 +22,10 @@ import PolkadotNFTAccountBalance from './components/Polkadot/NFT/PolkadotNFTAcco
 import PolkadotNFTHolders from './components/Polkadot/NFT/PolkadotNFTHolders.jsx'
 import PolkadotNFTInfo from './components/Polkadot/NFT/PolkadotNFTInfo.jsx'
 
+import KusamaAccountList from './components/Kusama/Account/KusamaAccountList.jsx'
+import KusamaLayout from './components/Kusama/Account/KusamaLayout.jsx'
+import KusamaTokenHolder from './components/Kusama/Account/KusamaTokenHolder.jsx'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -41,6 +45,9 @@ const router = createBrowserRouter(
     <Route path='/polkadotnftaccountbalance' element={<PolkadotNFTAccountBalance/>}/>
     <Route path='/polkadotnftholders' element={<PolkadotNFTHolders/>}/>
     <Route path='/polkadotnftinfo' element={<PolkadotNFTInfo/>}/>
+    <Route path='/kusamaaccountlist' element={<KusamaAccountList/>}/>
+    <Route path='/kusamalayout' element={<KusamaLayout/>}/>
+    <Route path='/kusamatokenholder' element={<KusamaTokenHolder/>}/>
     </Route>
   )
 )

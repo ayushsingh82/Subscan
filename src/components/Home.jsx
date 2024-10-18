@@ -2,6 +2,39 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+
+  const logos = [
+    {
+      src: "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=024",
+      alt: "Polkadot Logo",
+    },
+    {
+      src: "https://cryptologos.cc/logos/astar-astr-logo.svg?v=024",
+      alt: "Astar Logo",
+    },
+    {
+      src: "https://cryptologos.cc/logos/moonbeam-glmr-logo.svg?v=024",
+      alt: "Moonbeam Logo",
+    },
+    {
+      src: "https://cryptologos.cc/logos/kusama-ksm-logo.svg?v=024",
+      alt: "Kusama Logo",
+    },
+    {
+      src: "https://cdn.prod.website-files.com/66475ee97bcbe587a63b28c9/6699032a94bb4eeb967a25ea_peaq-opengraph.webp",
+      alt: "Peaq Logo",
+    },
+  ];
+
+  // Utility to generate random movement for logos
+  const generateRandomMovement = () => {
+    const x = Math.random() * 200 - 100; // Random value between -100 and 100
+    const y = Math.random() * 200 - 100;
+    const rotate = Math.random() * 360;
+    return { x, y, rotate };
+  };
+
+
   return (
     <section className="pt-0 pb-20 md:pb-10 bg-gradient-to-b from-white via-pink-200 to-pink-300 overflow-x-clip h-screen w-screen"> 
       <div className="container mx-auto px-4">
@@ -106,6 +139,7 @@ const Home = () => {
           </motion.div>
 
         </div>
+        
       </div>
     </section>
   );
