@@ -56,16 +56,19 @@ function Navbar() {
                   href=''
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                   Moonbeam
+                  <span className='text-sm border border-2 bg-pink-400  border-transparent  rounded-lg ml-[4px]'>coming</span>
                 </a>
                 <a
                   href=''
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                   Peak
+                  <span className='text-sm border border-2 bg-pink-400  border-transparent  rounded-lg ml-[4px]'>coming</span>
                 </a>
                 <a
                   href=''
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                   Astar
+                  <span className='text-sm border border-2 bg-pink-400  border-transparent  rounded-lg ml-[4px]'>coming</span>
                 </a>
               </div>
             )}

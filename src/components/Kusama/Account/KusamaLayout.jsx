@@ -75,7 +75,7 @@ function KusamaLayout() {
 
   return (
     <div className="mt-[30px] text-center">
-      <h1>Kusama</h1>
+         <h1 className="border border-2 bg-black text-lg font-semibold mb-[10px] text-pink-500 rounded-lg px-[5px] py-[3px]">Kusama</h1>
       <div style={{ marginBottom: "20px" }}>
         <button
           style={buttonStyle("account")}
