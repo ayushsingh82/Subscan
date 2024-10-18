@@ -4,6 +4,9 @@ import KusamaTokenHolder from "./KusamaTokenHolder";
 import KusamaBalanceHistory from "./KusamaBalanceHistory";
 import KusamaBlockDetails from "../Block/KusamaBlockDetails";
 import KusamaBlockList from "../Block/KusamaBlockList";
+import KusamaVotedValidator from "../Staking/KusamaVotedValidator";
+import KusamaValidatorList from "../Staking/KusamaValidatorList";
+import KusamaRewardSlash from "../Staking/KusamaRewardSlashList";
 
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -33,7 +36,9 @@ function KusamaLayout() {
       case "staking":
         return (
           <div>
-            stake
+           {stakingView==="reward" && <KusamaRewardSlash/>}
+           {stakingView==="validator-list" && <KusamaValidatorList/>}
+           {stakingView==="votedvalidator-list" && <KusamaVotedValidator/>}
           </div>
         );
       case "contract":

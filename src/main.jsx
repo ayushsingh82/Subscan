@@ -28,6 +28,9 @@ import KusamaTokenHolder from './components/Kusama/Account/KusamaTokenHolder.jsx
 import KusamaBalanceHistory from './components/Kusama/Account/KusamaBalanceHistory.jsx'
 import KusamaBlockDetails from './components/Kusama/Block/KusamaBlockDetails.jsx'
 import KusamaBlockList from './components/Kusama/Block/KusamaBlockList.jsx'
+import KusamaRewardSlash from './components/Kusama/Staking/KusamaRewardSlashList.jsx'
+import KusamaValidatorList from './components/Kusama/Staking/KusamaValidatorList.jsx'
+import KusamaVotedValidator from './components/Kusama/Staking/KusamaVotedValidator.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -54,6 +57,9 @@ const router = createBrowserRouter(
     <Route path='/kusamabalancehistory' element={<KusamaBalanceHistory/>}/>
     <Route path='/kusamablocklist' element={<KusamaBlockList/>}/>
     <Route path='/kusamablockdetails' element={<KusamaBlockDetails/>}/>
+    <Route path='/kusamarewardslash' element={<KusamaRewardSlash/>}/>
+    <Route path='/kusamavotedvalidator' element={<KusamaVotedValidator/>}/>
+    <Route path='/kusamavalidatorlist' element={<KusamaValidatorList/>}/>
     </Route>
   )
 )
