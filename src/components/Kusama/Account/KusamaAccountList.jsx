@@ -54,7 +54,7 @@ function KusamaAccountList() {
     };
 
     return (
-        <div className="p-5">
+        <div className="p-5 ">
             <h2 className="text-2xl font-bold mb-4 text-pink-500">Kusama Account List</h2>
             
             <button 

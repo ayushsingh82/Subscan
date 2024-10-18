@@ -92,7 +92,7 @@ function PolkadotLayout() {
 
   return (
     <div className="mt-[30px] text-center">
-      <h1 className="border border-2 bg-black text-lg font-semibold mb-[10px] text-pink-500 rounded-lg px-[5px] py-[3px]">Polkadot</h1>
+      <h1 className="text-pink-600 text-2xl font-semibold mb-[10px]">Polkadot</h1>
       <div style={{ marginBottom: "20px" }}>
         <button
           style={buttonStyle("account")}

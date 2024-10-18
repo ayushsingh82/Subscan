@@ -13,24 +13,7 @@ function Navbar() {
           <div className='font-bold text-2xl text-pink-500'>
             <a href='/'>PolkaScan</a>
           </div>
-          {/* <div className='flex justify-center flex-1 space-x-8 text-center'>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/polkadotlayout'>Polkadot</a>
-            </h1>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/'>Kusama</a>
-            </h1>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/'>Astar</a>
-            </h1>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/'>Moonbeam</a>
-            </h1>
-            <h1 className='font-medium text-lg text-pink-500'>
-              <a href='/'>Peak</a>
-            </h1>
-          </div> */}
-          
+
           {/* Dropdown button */}
           <div className='relative'>
             <button

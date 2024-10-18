@@ -26,6 +26,8 @@ import KusamaAccountList from './components/Kusama/Account/KusamaAccountList.jsx
 import KusamaLayout from './components/Kusama/Account/KusamaLayout.jsx'
 import KusamaTokenHolder from './components/Kusama/Account/KusamaTokenHolder.jsx'
 import KusamaBalanceHistory from './components/Kusama/Account/KusamaBalanceHistory.jsx'
+import KusamaBlockDetails from './components/Kusama/Block/KusamaBlockDetails.jsx'
+import KusamaBlockList from './components/Kusama/Block/KusamaBlockList.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -50,6 +52,8 @@ const router = createBrowserRouter(
     <Route path='/kusamalayout' element={<KusamaLayout/>}/>
     <Route path='/kusamatokenholder' element={<KusamaTokenHolder/>}/>
     <Route path='/kusamabalancehistory' element={<KusamaBalanceHistory/>}/>
+    <Route path='/kusamablocklist' element={<KusamaBlockList/>}/>
+    <Route path='/kusamablockdetails' element={<KusamaBlockDetails/>}/>
     </Route>
   )
 )

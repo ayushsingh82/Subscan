@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import KusamaAccountList from './KusamaAccountList';
 import KusamaTokenHolder from "./KusamaTokenHolder";
 import KusamaBalanceHistory from "./KusamaBalanceHistory";
+import KusamaBlockDetails from "../Block/KusamaBlockDetails";
+import KusamaBlockList from "../Block/KusamaBlockList";
 
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -24,7 +26,8 @@ function KusamaLayout() {
       case "block":
         return (
           <div>
-          block
+          {blockView === "block-details" && <KusamaBlockDetails />}
+          {blockView === "block-list" && <KusamaBlockList />}
           </div>
         );
       case "staking":
@@ -74,8 +77,8 @@ function KusamaLayout() {
   };
 
   return (
-    <div className="mt-[30px] text-center">
-         <h1 className="border border-2 bg-black text-lg font-semibold mb-[10px] text-pink-500 rounded-lg px-[5px] py-[3px]">Kusama</h1>
+    <div className="mt-[30px] text-center ">
+      <h1 className="text-pink-600 text-2xl font-semibold mb-[10px]">Kusama</h1>
       <div style={{ marginBottom: "20px" }}>
         <button
           style={buttonStyle("account")}
