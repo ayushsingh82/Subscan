@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import KusamaAccountList from './KusamaAccountList';
 import KusamaTokenHolder from "./KusamaTokenHolder";
+import KusamaBalanceHistory from "./KusamaBalanceHistory";
 
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -17,6 +18,7 @@ function KusamaLayout() {
           <div>
                {accountView === "account-list" && <KusamaAccountList />}
                {accountView === "token" && <KusamaTokenHolder />}
+               {accountView === "balance" && <KusamaBalanceHistory />}
           </div>
         );
       case "block":

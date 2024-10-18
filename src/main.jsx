@@ -25,6 +25,7 @@ import PolkadotNFTInfo from './components/Polkadot/NFT/PolkadotNFTInfo.jsx'
 import KusamaAccountList from './components/Kusama/Account/KusamaAccountList.jsx'
 import KusamaLayout from './components/Kusama/Account/KusamaLayout.jsx'
 import KusamaTokenHolder from './components/Kusama/Account/KusamaTokenHolder.jsx'
+import KusamaBalanceHistory from './components/Kusama/Account/KusamaBalanceHistory.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
     <Route path='/kusamaaccountlist' element={<KusamaAccountList/>}/>
     <Route path='/kusamalayout' element={<KusamaLayout/>}/>
     <Route path='/kusamatokenholder' element={<KusamaTokenHolder/>}/>
+    <Route path='/kusamabalancehistory' element={<KusamaBalanceHistory/>}/>
     </Route>
   )
 )
