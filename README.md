@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Polka-Scan** is a comprehensive solution designed to track on-chain activities across the Polkadot ecosystem. We provide users with a one-stop platform to monitor various chains, including Polkadot, Kusama, Moonbeam, Astar, and Peak. Our goal is to simplify the tracking of account activities, staking activities, NFTs, and blocks within the Polkadot ecosystem.
+**Polka-Scan** is a comprehensive solution/explorer designed to track on-chain activities across the Polkadot ecosystem. We provide users with a one-stop platform to monitor various chains, including Polkadot, Kusama, Moonbeam, Astar, and Peak. Our goal is to simplify the tracking of account activities, staking activities, NFTs, and blocks within the Polkadot ecosystem.
 
 ![image](https://github.com/user-attachments/assets/94527469-5214-4218-be8c-862756da98ce)
 
