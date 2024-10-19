@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import MoonbeamAccountList from "./MoonbeamAccountList";
 import MoonbeamBalanceHistory from "./MoonbeamBalanceHistory";
 import MoonbeamTokenHolder from "./MoonbeamTokenHolder";
+import MoonbeamRewardSlash from "../Staking/MoonbeamRewardSlashList";
+import MoonbeamVotedValidator from "../Staking/MoonbeamVotedValidator";
+import MoonbeamValidatorList from "../Staking/MoonbeamValidatorList";
 
 function Moonbeamlayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -31,7 +34,9 @@ function Moonbeamlayout() {
       case "staking":
         return (
           <div>
-           staking
+             {stakingView==="reward" && <MoonbeamRewardSlash/>}
+           {stakingView==="validator-list" && <MoonbeamValidatorList/>}
+           {stakingView==="votedvalidator-list" && <MoonbeamVotedValidator/>}
           </div>
         );
       case "nft":
