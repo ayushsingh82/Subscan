@@ -113,12 +113,6 @@ function PolkadotLayout() {
           Staking {activeSection === "staking" && <span style={dotStyle}>●</span>}
         </button>
         <button
-          style={buttonStyle("contract")}
-          onClick={() => setActiveSection("contract")}
-        >
-          Contract {activeSection === "contract" && <span style={dotStyle}>●</span>}
-        </button>
-        <button
           style={buttonStyle("nft")}
           onClick={() => setActiveSection("nft")}
         >

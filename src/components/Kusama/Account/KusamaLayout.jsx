@@ -41,12 +41,6 @@ function KusamaLayout() {
            {stakingView==="votedvalidator-list" && <KusamaVotedValidator/>}
           </div>
         );
-      case "contract":
-        return (
-          <div>
-            contract
-          </div>
-        );
       case "nft":
         return (
           <div>
@@ -102,12 +96,6 @@ function KusamaLayout() {
           onClick={() => setActiveSection("staking")}
         >
           Staking {activeSection === "staking" && <span style={dotStyle}>●</span>}
-        </button>
-        <button
-          style={buttonStyle("contract")}
-          onClick={() => setActiveSection("contract")}
-        >
-          Contract {activeSection === "contract" && <span style={dotStyle}>●</span>}
         </button>
         <button
           style={buttonStyle("nft")}

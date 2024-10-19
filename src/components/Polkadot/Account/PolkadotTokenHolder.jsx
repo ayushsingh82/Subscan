@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import axios from 'axios';
 
@@ -5,8 +6,14 @@ function PolkadotTokenHolder() {
   const [tokenHolders, setTokenHolders] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [token, setToken] = useState(""); // State to hold user input for the token
 
   const fetchTokenHolders = () => {
+    if (!token) {
+      setError("Please enter a token");
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -18,8 +25,8 @@ function PolkadotTokenHolder() {
       "order_field": "balance",
       "page": 0,
       "row": 10,
-      "token": "DOT",      // Replace with actual token
-      "unique_id": "dot"   // Replace with actual unique ID
+      "token": token,     // Use the inputted token
+      "unique_id": token.toLowerCase() // Convert token to lowercase for unique ID
     });
 
     const config = {
@@ -51,10 +58,20 @@ function PolkadotTokenHolder() {
   return (
     <div className="p-5">
       <h2 className="text-2xl font-bold mb-4 text-pink-500">Polkadot Token Holders</h2>
-      
+
+      {/* Input field to enter the token */}
+      <input
+        type="text"
+        placeholder="Enter token symbol (e.g., DOT)"
+        value={token}
+        onChange={(e) => setToken(e.target.value)}
+        className="mb-4 p-2 border border-black bg-black text-white rounded-md w-full"
+      />
+
+      {/* Fetch Token Holders Button */}
       <button 
         onClick={fetchTokenHolders} 
-        className="px-4 py-2 bg-black text-white rounded-md"
+        className="px-4 py-2 bg-black text-white rounded-md mt-2"
       >
         Fetch Token Holders
       </button>
