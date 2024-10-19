@@ -32,6 +32,14 @@ import KusamaRewardSlash from './components/Kusama/Staking/KusamaRewardSlashList
 import KusamaValidatorList from './components/Kusama/Staking/KusamaValidatorList.jsx'
 import KusamaVotedValidator from './components/Kusama/Staking/KusamaVotedValidator.jsx'
 
+import MoonbeamBalanceHistory from './components/Moonbeam/Account/MoonbeamBalanceHistory.jsx'
+import MoonbeamTokenHolder from './components/Moonbeam/Account/MoonbeamTokenHolder.jsx'
+import Moonbeamlayout from './components/Moonbeam/Account/MoonbeamLayout.jsx'
+import MoonbeamAccountList from './components/Moonbeam/Account/MoonbeamAccountList.jsx'
+import MoonbeamRewardSlash from './components/Moonbeam/Staking/MoonbeamRewardSlashList.jsx'
+import MoonbeamValidatorList from './components/Moonbeam/Staking/MoonbeamValidatorList.jsx'
+import MoonbeamVotedValidator from './components/Moonbeam/Staking/MoonbeamVotedValidator.jsx'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -60,6 +68,13 @@ const router = createBrowserRouter(
     <Route path='/kusamarewardslash' element={<KusamaRewardSlash/>}/>
     <Route path='/kusamavotedvalidator' element={<KusamaVotedValidator/>}/>
     <Route path='/kusamavalidatorlist' element={<KusamaValidatorList/>}/>
+    <Route path='/moonbeamlayout' element={<Moonbeamlayout/>}/>
+    <Route path='/moonbeamaccountlist' element={<MoonbeamAccountList/>}/>
+    <Route path='/moonbeamtokenholder' element={<MoonbeamTokenHolder/>}/>
+    <Route path='/moonbeambalancehistory' element={<MoonbeamBalanceHistory/>}/>
+    <Route path='/moonbeamvotedvalidator' element={<MoonbeamVotedValidator/>}/>
+    <Route path='/moonbeamvalidator' element={<MoonbeamValidatorList/>}/>
+    <Route path='/moonbeamrewardslash' element={<MoonbeamRewardSlash/>}/>
     </Route>
   )
 )

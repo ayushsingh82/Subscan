@@ -36,10 +36,9 @@ function Navbar() {
                   Kusama
                 </a>
                 <a
-                  href=''
+                  href='/moonbeamlayout'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                   Moonbeam
-                  <span className='text-sm border border-2 bg-pink-400  border-transparent  rounded-lg ml-[4px]'>coming</span>
                 </a>
                 <a
                   href=''
