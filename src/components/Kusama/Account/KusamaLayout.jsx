@@ -10,7 +10,7 @@ import KusamaRewardSlash from "../Staking/KusamaRewardSlashList";
 
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
-  const [accountView, setAccountView] = useState("account-list");
+  const [accountView, setAccountView] = useState("balance");
   const [blockView, setBlockView] = useState("block-details");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
@@ -21,9 +21,10 @@ function KusamaLayout() {
       case "account":
         return (
           <div>
+               {accountView === "balance" && <KusamaBalanceHistory />}
                {accountView === "account-list" && <KusamaAccountList />}
                {accountView === "token" && <KusamaTokenHolder />}
-               {accountView === "balance" && <KusamaBalanceHistory />}
+            
           </div>
         );
       case "block":

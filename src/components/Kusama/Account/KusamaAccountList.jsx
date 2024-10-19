@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function KusamaAccountList() {
+    const [accountAddress, setAccountAddress] = useState(""); // Input field state for the account address
     const [accounts, setAccounts] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const fetchAccounts = () => {
+        if (!accountAddress) {
+            setError("Please enter a valid account address.");
+            return;
+        }
+
         setLoading(true);
         setError(null);
 
         const data = JSON.stringify({
             account: "string",
-            address: ["DSmBVNGUf8EZGoa1ozeb4z3fv5iBNicV4EKHHqF8GfkL8eD"], // Example address
+            address: [accountAddress], // Use the inputted account address
             filter: "validator",
             max_balance: "string",
             min_balance: "string",
@@ -35,7 +41,6 @@ function KusamaAccountList() {
 
         axios(config)
             .then(function (response) {
-                // Check the entire response
                 console.log('Full Response:', response);
 
                 if (response.data && response.data.data && response.data.data.list) {
@@ -57,6 +62,15 @@ function KusamaAccountList() {
         <div className="p-5 ">
             <h2 className="text-2xl font-bold mb-4 text-pink-500">Kusama Account List</h2>
             
+            {/* Input field for the account address */}
+            <input
+                type="text"
+                placeholder="Enter account address"
+                value={accountAddress}
+                onChange={(e) => setAccountAddress(e.target.value)}
+                className="mb-4 p-2 border border-purple-500 bg-black text-white rounded-md w-full"
+            />
+
             <button 
                 onClick={fetchAccounts} 
                 className="px-4 py-2 bg-black text-white rounded-md"
@@ -64,7 +78,7 @@ function KusamaAccountList() {
                 Fetch Account List
             </button>
 
-            {/* Display loading, error or data */}
+            {/* Display loading, error, or data */}
             {loading && <p className="mt-4 text-black">Loading...</p>}
             {error && <p className="mt-4 text-red-600">{error}</p>}
             {accounts && accounts.length > 0 && (
@@ -83,3 +97,8 @@ function KusamaAccountList() {
 }
 
 export default KusamaAccountList;
+
+
+
+
+//DSmBVNGUf8EZGoa1ozeb4z3fv5iBNicV4EKHHqF8GfkL8eD
