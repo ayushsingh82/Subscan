@@ -44,6 +44,9 @@ import MoonbeamVotedValidator from './components/Moonbeam/Staking/MoonbeamVotedV
 import MoonbeamValidatorList from './components/Moonbeam/Staking/MoonbeamValidatorList.jsx'
 import MoonbeamBlockDetails from './components/Moonbeam/Block/MoonbeamBlockDetails.jsx'
 import MoonbeamBlockList from './components/Moonbeam/Block/MoonbeamBlockList.jsx'
+import MoonbeamNFTAccountBalance from './components/Moonbeam/NFT/MoonbeamNFTAccountBalance.jsx'
+import MoonbeamNFTHolders from './components/Moonbeam/NFT/MoonbeamNFTHolders.jsx'
+import MoonbeamNFTInfo from './components/Moonbeam/NFT/MoonbeamNFTInfo.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -85,6 +88,9 @@ const router = createBrowserRouter(
     <Route path='/moonbeamvalidatorlist' element={<MoonbeamValidatorList/>}/>
     <Route path='/moonbeamblocklist' element={<MoonbeamBlockList/>}/>
     <Route path='/moonbeamblockdetails' element={<MoonbeamBlockDetails/>}/>
+    <Route path='/moonbeamnftinfo' element={<MoonbeamNFTInfo/>}/>
+    <Route path='/moonbeamnftholders' element={<MoonbeamNFTHolders/>}/>
+    <Route path='/moonbeamnftacoount' element={<MoonbeamNFTAccountBalance/>}/>
     </Route>
   )
 )

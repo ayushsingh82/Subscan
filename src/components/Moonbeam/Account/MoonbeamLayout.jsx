@@ -7,6 +7,9 @@ import MoonbeamVotedValidator from "../Staking/MoonbeamVotedValidator";
 import MoonbeamValidatorList from "../Staking/MoonbeamValidatorList";
 import MoonbeamBlockDetails from "../Block/MoonbeamBlockDetails";
 import MoonbeamBlockList from "../Block/MoonbeamBlockList";
+import MoonbeamNFTAccountBalance from "../NFT/MoonbeamNFTAccountBalance";
+import MoonbeamNFTHolders from "../NFT/MoonbeamNFTHolders";
+import MoonbeamNFTInfo from "../NFT/MoonbeamNFTInfo";
 
 function Moonbeamlayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -45,7 +48,9 @@ function Moonbeamlayout() {
       case "nft":
         return (
           <div>
-            nft
+              {nftView === "nft-balance" && <MoonbeamNFTAccountBalance />}
+            {nftView === "nft-holders" && <MoonbeamNFTHolders />}
+            {nftView === "nft-info" && <MoonbeamNFTInfo />}
           </div>
         );
       default:
