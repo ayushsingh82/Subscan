@@ -31,6 +31,9 @@ import KusamaBlockList from './components/Kusama/Block/KusamaBlockList.jsx'
 import KusamaRewardSlash from './components/Kusama/Staking/KusamaRewardSlashList.jsx'
 import KusamaValidatorList from './components/Kusama/Staking/KusamaValidatorList.jsx'
 import KusamaVotedValidator from './components/Kusama/Staking/KusamaVotedValidator.jsx'
+import KusamaNFTHolders from './components/Kusama/NFT/KusamaNFTHolders.jsx'
+import KusamaNFTInfo from './components/Kusama/NFT/KusamaNFTInfo.jsx'
+import KusamaNFTAccountBalance from './components/Kusama/NFT/KusamaNFTAccountBalance.jsx'
 
 import MoonbeamBalanceHistory from './components/Moonbeam/Account/MoonbeamBalanceHistory.jsx'
 import MoonbeamTokenHolder from './components/Moonbeam/Account/MoonbeamTokenHolder.jsx'
@@ -70,6 +73,9 @@ const router = createBrowserRouter(
     <Route path='/kusamarewardslash' element={<KusamaRewardSlash/>}/>
     <Route path='/kusamavotedvalidator' element={<KusamaVotedValidator/>}/>
     <Route path='/kusamavalidatorlist' element={<KusamaValidatorList/>}/>
+    <Route path='/kusamanftinfo' element={<KusamaNFTInfo/>}/>
+    <Route path='/kusamanftholders' element={<KusamaNFTHolders/>}/>
+    <Route path='/kusamanftaccount' element={<KusamaNFTAccountBalance/>}/>
     <Route path='/moonbeamlayout' element={<Moonbeamlayout/>}/>
     <Route path='/moonbeamaccountlist' element={<MoonbeamAccountList/>}/>
     <Route path='/moonbeamtokenholder' element={<MoonbeamTokenHolder/>}/>

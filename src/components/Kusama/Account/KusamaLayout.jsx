@@ -7,6 +7,9 @@ import KusamaBlockList from "../Block/KusamaBlockList";
 import KusamaVotedValidator from "../Staking/KusamaVotedValidator";
 import KusamaValidatorList from "../Staking/KusamaValidatorList";
 import KusamaRewardSlash from "../Staking/KusamaRewardSlashList";
+import KusamaNFTInfo from "../NFT/KusamaNFTInfo";
+import KusamaNFTAccountBalance from "../NFT/KusamaNFTAccountBalance";
+import KusamaNFTHolders from "../NFT/KusamaNFTHolders";
 
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
@@ -14,7 +17,7 @@ function KusamaLayout() {
   const [blockView, setBlockView] = useState("block-list");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
-  const [nftView, setNftView] = useState("nft-balance");
+  const [nftView, setNftView] = useState("nft-info");
 
   const renderSection = () => {
     switch (activeSection) {
@@ -45,7 +48,9 @@ function KusamaLayout() {
       case "nft":
         return (
           <div>
-            nft
+            {nftView === "nft-balance" && <KusamaNFTAccountBalance />}
+            {nftView === "nft-holders" && <KusamaNFTHolders />}
+            {nftView === "nft-info" && <KusamaNFTInfo />}
           </div>
         );
       default:

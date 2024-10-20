@@ -19,7 +19,7 @@ function PolkadotLayout() {
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
   const [blockView, setBlockView] = useState("block-list");
-  const [nftView, setNftView] = useState("nft-balance"); // New state for NFT view
+  const [nftView, setNftView] = useState("nft-info"); // New state for NFT view
 
   const renderSection = () => {
     switch (activeSection) {
@@ -188,9 +188,10 @@ function PolkadotLayout() {
               value={nftView}
               onChange={(e) => setNftView(e.target.value)}
             >
+               <option value="nft-info">NFT Info</option>
               <option value="nft-balance">NFT Account Balance</option>
               <option value="nft-holders">NFT Holders</option>
-              <option value="nft-info">NFT Info</option>
+             
               {/* Add more options here as needed */}
             </select>
           </label>

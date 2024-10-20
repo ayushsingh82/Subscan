@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PolkadotNFTHolders = () => {
+const KusamaNFTHolders = () => {
   const [collectionId, setCollectionId] = useState(''); // State for input field
   const [holdersData, setHoldersData] = useState(null);
   const [error, setError] = useState(null);
@@ -33,7 +33,7 @@ const PolkadotNFTHolders = () => {
     };
 
     try {
-      const response = await fetch("https://polkadot.api.subscan.io/api/scan/nfts/info/holders", requestOptions);
+      const response = await fetch("https://kusama.api.subscan.io/api/scan/nfts/info/holders", requestOptions);
       const result = await response.json();
 
       console.log("Response:", result); // Log the API response for debugging
@@ -102,4 +102,4 @@ const PolkadotNFTHolders = () => {
   );
 };
 
-export default PolkadotNFTHolders;
+export default KusamaNFTHolders;

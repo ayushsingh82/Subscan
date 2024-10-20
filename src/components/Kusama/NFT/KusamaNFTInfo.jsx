@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PolkadotNFTInfo = () => {
+const KusamaNFTInfo = () => {
   const [nftAddress, setNftAddress] = useState('');
   const [nftInfo, setNftInfo] = useState(null);
   const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ const PolkadotNFTInfo = () => {
     };
 
     try {
-      const response = await fetch("https://polkadot.api.subscan.io/api/scan/nfts/info", requestOptions);
+      const response = await fetch("https://kusama.api.subscan.io/api/scan/nfts/info", requestOptions);
       const result = await response.json();
 
       console.log("Response:", result); // Log the API response for debugging
@@ -90,4 +90,4 @@ const PolkadotNFTInfo = () => {
   );
 };
 
-export default PolkadotNFTInfo;
+export default KusamaNFTInfo;

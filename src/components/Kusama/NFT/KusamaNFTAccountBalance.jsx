@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const PolkadotNFTAccountBalance = () => {
+const KusamaNFTAccountBalance = () => {
   const [accountAddress, setAccountAddress] = useState(''); // To store input address
   const [collectionId, setCollectionId] = useState(''); // To store input collection ID
   const [nftData, setNftData] = useState(null);
@@ -36,7 +36,7 @@ const PolkadotNFTAccountBalance = () => {
     };
 
     try {
-      const response = await fetch("https://polkadot.api.subscan.io/api/scan/nfts/account/balances", requestOptions);
+      const response = await fetch("https://kusama.api.subscan.io/api/scan/nfts/account/balances", requestOptions);
       const result = await response.json();
 
       if (result.code === 0) {
@@ -97,4 +97,4 @@ const PolkadotNFTAccountBalance = () => {
   );
 };
 
-export default PolkadotNFTAccountBalance;
+export default KusamaNFTAccountBalance;
