@@ -39,6 +39,8 @@ import MoonbeamAccountList from './components/Moonbeam/Account/MoonbeamAccountLi
 import MoonbeamRewardSlash from './components/Moonbeam/Staking/MoonbeamRewardSlashList.jsx'
 import MoonbeamVotedValidator from './components/Moonbeam/Staking/MoonbeamVotedValidator.jsx'
 import MoonbeamValidatorList from './components/Moonbeam/Staking/MoonbeamValidatorList.jsx'
+import MoonbeamBlockDetails from './components/Moonbeam/Block/MoonbeamBlockDetails.jsx'
+import MoonbeamBlockList from './components/Moonbeam/Block/MoonbeamBlockList.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -75,6 +77,8 @@ const router = createBrowserRouter(
     <Route path='/moonbeamrewardslash' element={<MoonbeamRewardSlash/>}/>
     <Route path='/moonbeamvotedvalidator' element={<MoonbeamVotedValidator/>}/>
     <Route path='/moonbeamvalidatorlist' element={<MoonbeamValidatorList/>}/>
+    <Route path='/moonbeamblocklist' element={<MoonbeamBlockList/>}/>
+    <Route path='/moonbeamblockdetails' element={<MoonbeamBlockDetails/>}/>
     </Route>
   )
 )

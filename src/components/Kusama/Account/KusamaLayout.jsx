@@ -11,7 +11,7 @@ import KusamaRewardSlash from "../Staking/KusamaRewardSlashList";
 function KusamaLayout() {
   const [activeSection, setActiveSection] = useState("account");
   const [accountView, setAccountView] = useState("balance");
-  const [blockView, setBlockView] = useState("block-details");
+  const [blockView, setBlockView] = useState("block-list");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
   const [nftView, setNftView] = useState("nft-balance");
@@ -128,8 +128,9 @@ function KusamaLayout() {
               value={blockView}
               onChange={(e) => setBlockView(e.target.value)}
             >
+                 <option value="block-list">Block List</option>
               <option value="block-details">Block Details</option>
-              <option value="block-list">Block List</option>
+           
             </select>
           </label>
         </div>

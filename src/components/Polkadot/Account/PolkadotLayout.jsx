@@ -18,7 +18,7 @@ function PolkadotLayout() {
   const [accountView, setAccountView] = useState("balance");
   const [stakingView, setStakingView] = useState("reward");
   const [contractView, setContractView] = useState("contract-event");
-  const [blockView, setBlockView] = useState("block-details");
+  const [blockView, setBlockView] = useState("block-list");
   const [nftView, setNftView] = useState("nft-balance"); // New state for NFT view
 
   const renderSection = () => {
@@ -34,8 +34,9 @@ function PolkadotLayout() {
       case "block":
         return (
           <div>
+             {blockView === "block-list" && <PolkadotBlockList />}
             {blockView === "block-details" && <PolkadotBlockDetails />}
-            {blockView === "block-list" && <PolkadotBlockList />}
+           
           </div>
         );
       case "staking":
@@ -142,8 +143,9 @@ function PolkadotLayout() {
               value={blockView}
               onChange={(e) => setBlockView(e.target.value)}
             >
+                <option value="block-list">Block List</option>
               <option value="block-details">Block Details</option>
-              <option value="block-list">Block List</option>
+            
               {/* Add more options here as needed */}
             </select>
           </label>
