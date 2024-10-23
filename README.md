@@ -42,3 +42,6 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/polka-scan.git
+
+2. feel free to contribute 
+
